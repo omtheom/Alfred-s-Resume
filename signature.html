@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex" />
+<title>Email Signature — Alfred Juma Oketch</title>
+<style>
+  body { margin: 0; padding: 40px 16px; background: #EEF2F6; font-family: Arial, Helvetica, sans-serif; color: #1F2A37; }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 18px; margin: 0 0 6px; color: #0B2545; }
+  .hint { font-size: 14px; line-height: 1.6; margin: 0 0 20px; color: #4B5563; }
+  .card { background: #FFFFFF; border: 1px solid #D6DEE8; border-radius: 8px; padding: 28px 24px; overflow-x: auto; }
+  button { margin-top: 16px; padding: 10px 18px; font-size: 14px; border: 0; border-radius: 6px; background: #0B2545; color: #fff; cursor: pointer; }
+  #status { margin-left: 10px; font-size: 13px; color: #1B6CA8; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Alfred's email signature</h1>
+  <p class="hint">Click <strong>Copy signature</strong>, then paste it into your email app's signature settings.</p>
+
+  <div class="card">
+    <div id="signature">
+<!-- ===== SIGNATURE START ===== -->
+<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;color:#1F2A37;">
+  <tr>
+    <td style="padding:0 18px 0 0;vertical-align:middle;">
+      <img src="https://omtheom.github.io/Alfred-s-Resume/signature-photo.jpg" alt="Alfred Juma Oketch" width="96" height="96" style="display:block;width:96px;height:96px;border-radius:50%;border:3px solid #1B6CA8;" />
+    </td>
+    <td style="padding:0 0 0 18px;vertical-align:middle;border-left:2px solid #0B2545;">
+      <div style="font-family:Georgia,'Times New Roman',serif;font-size:20px;line-height:24px;font-weight:bold;color:#0B2545;">Alfred Juma Oketch</div>
+      <div style="font-size:13px;line-height:20px;font-weight:bold;color:#1B6CA8;letter-spacing:0.5px;padding-top:2px;">Ship Security Officer &nbsp;|&nbsp; Lifeguard</div>
+      <div style="font-size:12px;line-height:18px;color:#6B7280;padding-bottom:8px;">STCW Certified &middot; Diploma in Nautical Studies &middot; Seaman Book Held</div>
+      <div style="font-size:13px;line-height:20px;color:#1F2A37;">
+        <span style="color:#0B2545;font-weight:bold;">T</span>&nbsp; <a href="tel:+254748726471" style="color:#1F2A37;text-decoration:none;">+254 748 726 471</a><br />
+        <span style="color:#0B2545;font-weight:bold;">E</span>&nbsp; <a href="mailto:jumahalfred72@gmail.com" style="color:#1F2A37;text-decoration:none;">jumahalfred72@gmail.com</a><br />
+        <span style="color:#0B2545;font-weight:bold;">W</span>&nbsp; <a href="https://omtheom.github.io/Alfred-s-Resume/" style="color:#1B6CA8;text-decoration:none;">View my resume</a>
+        &nbsp;&middot;&nbsp; Mombasa, Kenya
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" style="padding-top:14px;">
+      <table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;width:100%;">
+        <tr>
+          <td style="background:#0B2545;padding:6px 12px;font-size:11px;line-height:16px;color:#FFFFFF;letter-spacing:1px;">
+            &#9875;&nbsp; SAFETY AT SEA &middot; PASSENGER PROTECTION &middot; WATER RESCUE
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ===== SIGNATURE END ===== -->
+    </div>
+  </div>
+
+  <button type="button" id="copy">Copy signature</button><span id="status"></span>
+</div>
+
+<script>
+  document.getElementById('copy').addEventListener('click', function () {
+    var sig = document.getElementById('signature');
+    var range = document.createRange();
+    range.selectNodeContents(sig);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.getElementById('status').textContent = ok
+      ? 'Copied. Now paste it into your signature settings.'
+      : 'Press Ctrl+C (or Cmd+C on Mac) to copy the highlighted signature.';
+  });
+</script>
+</body>
+</html>
